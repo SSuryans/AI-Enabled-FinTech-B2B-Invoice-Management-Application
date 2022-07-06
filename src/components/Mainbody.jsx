@@ -1,62 +1,43 @@
-import MaterialTable from "material-table";
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
-import { Table } from '@material-ui/core';
+import React, { useState, useEffect } from 'react'
+import Button from '@mui/material/Button';
+import { Typography } from '@material-ui/core';
+import './Mainbody.jsx';
+import RefreshIcon from '@material-ui/icons/Refresh';
+import TextField from '@mui/material/TextField';
+import SearchIcon from '@mui/icons-material/Search';
+import InputAdornment from '@mui/material/InputAdornment';
+import './table.jsx';
+import DataTable from './table.jsx';
+import pic from "D:\\Cooollege Stuffs\\6th Semester\\High Radius\\finallllllyyyy frontend new folder\\HRC80324W-front_end\\src\\components\\1.png";
+import pic1 from "D:\\Cooollege Stuffs\\6th Semester\\High Radius\\finallllllyyyy frontend new folder\\HRC80324W-front_end\\src\\components\\3.png";
 
-const useStyles = makeStyles({
-    table: {
-      minWidth: 650,
-    },
-  });
-
-  function createData(name, age, sex, country, salary) {
-    return { name, age, sex, country, salary };
-}
-// add data
-const rows = [
-createData('John', 45, 'Male', 'Canada', 5000),
-createData('Mary', 25, 'Female', 'London', 8500),
-createData('Nick', 31, 'Male', 'America', 7800),
-createData('Sunil', 65, 'Male', 'London', 4800),
-createData('Rebecca', 51, 'Female', 'America', 7500),
-];
-
-const Mainbody = () => {
-    const classes = useStyles();
-    return (
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">  
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="right">Age</TableCell>
-              <TableCell align="right">Sex</TableCell>
-              <TableCell align="right">Country</TableCell>
-              <TableCell align="right">Salary&nbsp;($)</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.name}>
-                <TableCell component="th" scope="row">
-                 {row.name}
-                </TableCell>
-                <TableCell align="right">{row.age}</TableCell>
-                <TableCell align="right">{row.sex}</TableCell>
-                <TableCell align="right">{row.country}</TableCell>
-                <TableCell align="right">{row.salary}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    );
-}
-
-export default Mainbody
+function Mainbody(){
+  return(
+    <div>
+      <img src = {pic1} alt="logo" id="abcproductslogo"></img>
+      <img src = {pic} alt="logo" id="highradiuslogo"></img>
+      <Typography id="Invoice">
+        Invoice List
+        </Typography>
+        <Button id="new" size="large" variant="contained">Predict</Button>
+        <Button id="new" size="large" variant="contained">Analytics View</Button>
+        <Button id="new" size="large" variant="contained">Advance Search</Button>
+        <RefreshIcon id="refresh"color='secondary' fontSize="large"> </RefreshIcon>
+        <TextField
+        id="input-with-icon-textfield"
+        label="Search"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start" id="inputadornment">
+            <SearchIcon id="searchicon"></SearchIcon>
+            </InputAdornment>
+          ),
+        }}></TextField>
+        <Button id="newother" size="large" variant="contained">Add</Button>
+        <Button id="new" size="large" variant="contained">Edit</Button>
+        <Button id="new" size="large" variant="contained">Delete</Button>
+        <DataTable></DataTable>
+        </div>
+  )
+};
+export default Mainbody;

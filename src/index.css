@@ -1,0 +1,51 @@
+body
+{
+    background-color: #2c4250;
+}
+#refresh
+{
+    border: solid  blue 1.5px;
+    padding: 5px 15px 5px 15px;
+    color: blue;
+    font-size: 200%;
+    margin-left: 80px;
+    margin-bottom: -17px;
+    margin-right: 1%;
+}
+#new
+{
+    padding-left:3% ;
+    padding-right: 3%;
+}
+#Invoice
+{
+    font-size: 150%;
+    font-weight: 900;
+    color: aliceblue;
+}
+#newother
+{
+    margin-left: 50px;
+    padding-left:4% ;
+    padding-right: 4%;
+}
+#highradiuslogo
+{
+    margin-left: 20%;
+    width: 250px;
+    height: 50px;
+}
+#input-with-icon-textfield{
+    background-color: white;
+}
+#searchicon{
+    margin-left: -13px;
+    padding-top: 160%;
+    padding-bottom: 140%;
+    padding-right: 69%;
+    background-color: white;
+}
+#inputadornment
+{
+    background-color: white;
+}
